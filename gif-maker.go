@@ -22,13 +22,15 @@ func main() {
 	lissajous(os.Stdout)
 }
 
+// @TODO Convert to a go module.
 func lissajous(out io.Writer) {
+	// @TODO convert to a struct
 	const (
-		cycles = 12      //number of complete x oscillator revolutions
-		res     = 0.001 // angular resolution
-		size    = 75   // image canvas covers [-size..+size]
-		nframes = 128    // number of animation frames
-		delay   = 8     //delay between frames in 10ms units
+		cycles  = 3    //number of complete x oscillator revolutions
+		res     = 0.01 // angular resolution
+		size    = 150  // image canvas covers [-size..+size]
+		nframes = 1    // number of animation frames
+		delay   = 4    //delay between frames in 10ms units
 	)
 	freq := rand.Float64() * 2.0 // relative frequency of y oscillator
 	anim := gif.GIF{LoopCount: nframes}
